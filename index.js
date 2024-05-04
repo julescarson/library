@@ -46,7 +46,7 @@ header.appendChild(book_button);
 
 //dialog
 let bookDialog = document.createElement("dialog");
-book_button.appendChild(bookDialog);
+header.appendChild(bookDialog);
 
 let book_form = document.createElement("form");
 bookDialog.appendChild(book_form);
@@ -65,15 +65,37 @@ let title_field = formField("title", "text", "Book Title");
 let author_field = formField("author", "text", "Author");
 let pages_field = formField("pages", "text", "Number of Pages");
 let read_field = formField("read", "text", "read");
+let add_submit = document.createElement("button");
+add_submit.innerText = "Submit";
+add_submit.id = "submit_book";
+book_form.appendChild(add_submit);
+
+//stop form close
+bookDialog.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+//create the new book
+add_submit.addEventListener("click", () => {
+  //--- --- todo if fields not empty, and check submit, since no backend etc etc etc,
+  let bookToAdd = new Book(
+    book_form.title.value,
+    book_form.author.value,
+    book_form.pages.value,
+    book_form.read.value
+  );
+  console.log(bookToAdd);
+  addBookToLibrary(bookToAdd);
+});
 
 //open/close form on click
-let openClose = 0;
+let localStorage = 0;
 book_button.addEventListener("click", () => {
-  if (openClose === 0) {
+  if (localStorage === 0) {
     bookDialog.show();
-    openClose = 1;
+    localStorage = 1;
   } else {
     bookDialog.close();
-    openClose = 0;
+    localStorage = 0;
   }
 });
