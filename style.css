@@ -1,0 +1,63 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.header {
+  margin: 50px;
+  padding: 20px;
+}
+
+.book_card {
+  display: flex;
+  margin: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+input[type="text"] {
+  width: 25%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+dialog {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+#book_button {
+  background-color: #3498db; /* Blue */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition-duration: 0.4s;
+}
